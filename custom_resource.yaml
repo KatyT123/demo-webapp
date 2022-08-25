@@ -6,10 +6,10 @@ spec:
   applicationName: tomcat-demo
   replicas: 3
   webImage:
-    applicationImage: quay.io/jfclere/tomcat10:latest
+    applicationImage: quay.io/ktsagara/tomcat10:latest
     webApp:
-      sourceRepositoryURL: https://github.com/jfclere/demo-webapp
+      sourceRepositoryURL: https://github.com/KatyT123/demo-webapp
       # sourceRepositoryRef is not required by default but it is needed to get the correct source code for the webapp
-      sourceRepositoryRef: "jakartaEE"
+      sourceRepositoryRef: "jws-qe"
       builder:
         image: maven:3.8.1-openjdk-8

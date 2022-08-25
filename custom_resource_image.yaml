@@ -6,4 +6,4 @@ spec:
   applicationName: tomcat-demo
   replicas: 3
   webImage:
-    applicationImage: quay.io/jfclere/tomcat-demo
+    applicationImage: quay.io/ktsagara/tomcat-demo

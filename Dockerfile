@@ -1,7 +1,9 @@
-FROM quay.io/ktsagara/tomcat10-builder:latest
+FROM quay.io/ktsagara/image-builder-jws
 LABEL Description="Tomcat webapp image to use with the JWS operator"
 VOLUME /tmp
 
-RUN git clone https://github.com/KatyT123/demo-webapp
+RUN uname -a
 
-RUN (cd demo-webapp; git checkout jws-qe; mvn install; cp target/demo-1.0.war /deployments/ROOT.war)
+# The script just tests that the builder is build a war nothing else (adjust it to your need)
+RUN (cd /tmp; git clone https://github.com/KatyT123/demo-webapp.git; cd demo-webapp; git checkout jws-qe; mvn install; if [ -d /deployments ]; then cp target/demo-1.0.war /deployments/ROOT.war; fi)
+
